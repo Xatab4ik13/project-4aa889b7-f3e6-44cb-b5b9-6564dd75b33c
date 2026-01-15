@@ -23,10 +23,10 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="ОСЛ" className="h-14 w-14 object-contain" />
             <div className="hidden sm:block">
-              <p className="text-primary-foreground font-extrabold text-lg leading-tight">
+              <p className="text-primary-foreground font-medium text-lg leading-tight">
                 Объединенная
               </p>
-              <p className="text-accent font-bold text-sm">
+              <p className="text-accent font-medium text-sm">
                 Служба Логистики
               </p>
             </div>
@@ -50,7 +50,7 @@ const Header = () => {
           {/* Phone */}
           <div className="hidden md:flex items-center gap-2 text-primary-foreground">
             <Phone className="h-5 w-5 text-accent" />
-            <a href="tel:+79150157992" className="font-bold hover:text-accent transition-colors">
+            <a href="tel:+79150157992" className="font-medium hover:text-accent transition-colors">
               +7 (915) 015-79-92
             </a>
           </div>
