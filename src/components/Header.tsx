@@ -20,13 +20,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="ОСЛ" className="h-14 w-14 object-contain" />
-            <div className="hidden sm:block">
-              <p className="text-primary-foreground font-medium text-lg leading-tight">
+          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+            <img src={logo} alt="ОСЛ" className="h-10 w-10 sm:h-14 sm:w-14 object-contain" />
+            <div>
+              <p className="text-primary-foreground font-medium text-sm sm:text-lg leading-tight">
                 Объединенная
               </p>
-              <p className="text-accent font-medium text-sm">
+              <p className="text-accent font-medium text-xs sm:text-sm">
                 Служба Логистики
               </p>
             </div>
