@@ -64,7 +64,7 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-primary/70" />
+        
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
