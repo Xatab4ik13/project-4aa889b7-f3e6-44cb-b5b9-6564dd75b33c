@@ -45,12 +45,6 @@ const services = [
   },
 ];
 
-const stats = [
-  { value: "4+", label: "Года опыта" },
-  { value: "500+", label: "Довольных клиентов" },
-  { value: "24/7", label: "Работаем" },
-  { value: "1000+", label: "Рейсов в месяц" },
-];
 
 const Index = () => {
   return (
@@ -98,27 +92,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-12 bg-background border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-muted-foreground font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* About Section */}
+      <AboutSection />
 
       {/* Partners Carousel */}
       <PartnersCarousel />
-
-      {/* About Section */}
-      <AboutSection />
 
       {/* Philosophy Section */}
       <section className="py-20 bg-muted">
