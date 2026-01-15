@@ -1,70 +1,36 @@
 import { Link } from "react-router-dom";
-import { Check, ArrowRight, Truck, Package, AlertTriangle, Thermometer } from "lucide-react";
+import { ArrowRight, Truck, Package, AlertTriangle, Thermometer } from "lucide-react";
 import Layout from "@/components/Layout";
 import fleetHero from "@/assets/fleet-hero.jpg";
 
 const tariffs = [
   {
-    name: "Стандарт",
     icon: Truck,
+    name: "Стандарт",
     description: "Для обычных грузов",
-    price: "от 35",
-    unit: "₽/км",
-    features: [
-      "Грузоподъемность до 20 тонн",
-      "Объем до 82 м³",
-      "Стандартные сроки доставки",
-      "Базовое страхование",
-      "Отслеживание груза",
-    ],
-    popular: false,
+    price: "от 35 ₽/км",
+    details: "Грузоподъемность до 20 тонн, объем до 82 м³, стандартные сроки доставки, базовое страхование, отслеживание груза.",
   },
   {
-    name: "Экспресс",
     icon: Package,
+    name: "Экспресс",
     description: "Срочная доставка",
-    price: "от 50",
-    unit: "₽/км",
-    features: [
-      "Грузоподъемность до 20 тонн",
-      "Объем до 82 м³",
-      "Ускоренная доставка",
-      "Расширенное страхование",
-      "Приоритетная обработка",
-      "Трекинг в реальном времени",
-    ],
-    popular: true,
+    price: "от 50 ₽/км",
+    details: "Грузоподъемность до 20 тонн, объем до 82 м³, ускоренная доставка, расширенное страхование, приоритетная обработка, трекинг в реальном времени.",
   },
   {
-    name: "ADR",
     icon: AlertTriangle,
+    name: "ADR",
     description: "Опасные грузы",
-    price: "от 70",
-    unit: "₽/км",
-    features: [
-      "Все классы опасности",
-      "Сертифицированный транспорт",
-      "Обученные водители",
-      "Полное страхование",
-      "Документальное сопровождение",
-      "24/7 мониторинг",
-    ],
-    popular: false,
+    price: "от 70 ₽/км",
+    details: "Все классы опасности, сертифицированный транспорт, обученные водители, полное страхование, документальное сопровождение, мониторинг 24/7.",
   },
   {
-    name: "Рефрижератор",
     icon: Thermometer,
+    name: "Рефрижератор",
     description: "Температурный режим",
-    price: "от 55",
-    unit: "₽/км",
-    features: [
-      "Температура от -25°C до +25°C",
-      "Грузоподъемность до 20 тонн",
-      "Контроль температуры",
-      "Мультитемпературные перевозки",
-      "Сертифицированный транспорт",
-    ],
-    popular: false,
+    price: "от 55 ₽/км",
+    details: "Температура от -25°C до +25°C, грузоподъемность до 20 тонн, контроль температуры, мультитемпературные перевозки, сертифицированный транспорт.",
   },
 ];
 
@@ -97,55 +63,30 @@ const Tariffs = () => {
         </div>
       </section>
 
-      {/* Tariffs Grid */}
+      {/* Tariffs List */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="max-w-4xl mx-auto space-y-8">
             {tariffs.map((tariff) => (
               <div
                 key={tariff.name}
-                className={`relative bg-card rounded-2xl p-6 shadow-lg border-2 transition-all duration-300 hover:shadow-xl ${
-                  tariff.popular ? "border-primary scale-105" : "border-border hover:border-primary/50"
-                }`}
+                className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 pb-8 border-b border-border last:border-b-0"
               >
-                {tariff.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-sm font-semibold px-4 py-1 rounded-full">
-                    Популярный
+                <div className="flex items-center gap-4 md:w-1/4">
+                  <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                    <tariff.icon className="h-6 w-6 text-accent" />
                   </div>
-                )}
-                
-                <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-4">
-                  <tariff.icon className="h-7 w-7 text-accent" />
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">{tariff.name}</h3>
+                    <p className="text-sm text-muted-foreground">{tariff.description}</p>
+                  </div>
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-1">{tariff.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{tariff.description}</p>
+                <p className="text-foreground md:flex-1">{tariff.details}</p>
                 
-                <div className="mb-6">
-                  <span className="text-3xl font-bold text-primary">{tariff.price}</span>
-                  <span className="text-muted-foreground ml-1">{tariff.unit}</span>
+                <div className="md:w-32 text-right">
+                  <span className="text-xl font-bold text-primary">{tariff.price}</span>
                 </div>
-                
-                <ul className="space-y-3 mb-6">
-                  {tariff.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-foreground">
-                      <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                
-                <Link
-                  to="/request"
-                  className={`w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg font-semibold transition-all ${
-                    tariff.popular
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "bg-muted text-foreground hover:bg-primary hover:text-primary-foreground"
-                  }`}
-                >
-                  Заказать
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
               </div>
             ))}
           </div>
