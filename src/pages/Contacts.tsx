@@ -49,7 +49,6 @@ const Contacts = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${officeHero})` }}
         />
-        <div className="absolute inset-0 bg-primary/80"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             <span className="text-accent">Контакты</span>
