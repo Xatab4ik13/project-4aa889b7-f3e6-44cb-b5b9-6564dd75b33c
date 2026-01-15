@@ -8,16 +8,16 @@ const offices = [
   {
     city: "Москва (Домодедово)",
     address: "Московская область, г. Домодедово, ул. Логистическая, д. 1",
-    phone: "+7 (900) 123-45-67",
-    email: "moscow@osl-logistics.ru",
+    phone: "+7 (915) 015-79-92",
+    email: "OSL.LOGISTIKA@yandex.ru",
     hours: "Пн-Пт: 9:00-18:00, Сб-Вс: выходной",
     isMain: true,
   },
   {
     city: "Казань",
     address: "Республика Татарстан, г. Казань, ул. Складская, д. 15",
-    phone: "+7 (900) 765-43-21",
-    email: "kazan@osl-logistics.ru",
+    phone: "+7 (915) 015-79-92",
+    email: "OSL.LOGISTIKA@yandex.ru",
     hours: "Пн-Пт: 9:00-18:00, Сб-Вс: выходной",
     isMain: false,
   },
@@ -128,8 +128,8 @@ const Contacts = () => {
 
               <div className="bg-primary rounded-2xl p-8 text-primary-foreground mb-8">
                 <h3 className="text-accent font-bold text-xl mb-4">Горячая линия 24/7</h3>
-                <a href="tel:+79001234567" className="text-3xl font-bold hover:text-accent transition-colors">
-                  +7 (900) 123-45-67
+                <a href="tel:+79150157992" className="text-3xl font-bold hover:text-accent transition-colors">
+                  +7 (915) 015-79-92
                 </a>
                 <p className="text-primary-foreground/80 mt-2">
                   Диспетчерская служба
@@ -143,8 +143,8 @@ const Contacts = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Общие вопросы</p>
-                    <a href="mailto:info@osl-logistics.ru" className="text-foreground font-semibold hover:text-primary transition-colors">
-                      info@osl-logistics.ru
+                    <a href="mailto:OSL.LOGISTIKA@yandex.ru" className="text-foreground font-semibold hover:text-primary transition-colors">
+                      OSL.LOGISTIKA@yandex.ru
                     </a>
                   </div>
                 </div>
@@ -154,8 +154,8 @@ const Contacts = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Отдел кадров</p>
-                    <a href="mailto:hr@osl-logistics.ru" className="text-foreground font-semibold hover:text-primary transition-colors">
-                      hr@osl-logistics.ru
+                    <a href="mailto:OSL.LOGISTIKA@yandex.ru" className="text-foreground font-semibold hover:text-primary transition-colors">
+                      OSL.LOGISTIKA@yandex.ru
                     </a>
                   </div>
                 </div>

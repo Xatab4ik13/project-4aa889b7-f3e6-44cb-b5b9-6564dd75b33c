@@ -66,13 +66,8 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <div className="flex items-center gap-4 mb-6">
-              <img src={logo} alt="ОСЛ" className="h-16 w-16 object-contain" />
-              <div>
-                <p className="text-primary-foreground/80 text-sm uppercase tracking-wider">Логистическая компания</p>
-                <h2 className="text-accent font-bold text-xl">ОБЪЕДИНЕННАЯ СЛУЖБА ЛОГИСТИКИ</h2>
-              </div>
-            </div>
+            <p className="text-primary-foreground/80 text-sm uppercase tracking-wider mb-2">Логистическая компания</p>
+            <h2 className="text-accent font-bold text-xl mb-6">ОБЪЕДИНЕННАЯ СЛУЖБА ЛОГИСТИКИ</h2>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
               Ваш надежный партнер в сфере{" "}

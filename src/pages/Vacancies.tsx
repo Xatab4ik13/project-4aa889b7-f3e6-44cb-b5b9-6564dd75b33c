@@ -265,7 +265,7 @@ const Vacancies = () => {
             когда появится подходящая позиция.
           </p>
           <a
-            href="mailto:hr@osl-logistics.ru"
+            href="mailto:OSL.LOGISTIKA@yandex.ru"
             className="btn-hero inline-flex items-center gap-2"
           >
             Отправить резюме
