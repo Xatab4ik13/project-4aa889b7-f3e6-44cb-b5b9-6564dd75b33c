@@ -55,53 +55,51 @@ const stats = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section - на весь экран с картой России */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - карта на весь блок без пустого пространства */}
+      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
         {/* Фоновое изображение на весь блок */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <img 
-            src={heroMap} 
-            alt="Карта России с грузоперевозками" 
-            className="w-full h-full object-contain max-w-[90%] max-h-[90%] animate-fade-in"
-          />
-        </div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroMap})` }}
+        />
         
         {/* Контент поверх */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <img src={logo} alt="ОСЛ" className="h-20 w-20 object-contain" />
+            <div className="inline-flex items-center gap-4 mb-6 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-xl shadow-lg">
+              <img src={logo} alt="ОСЛ" className="h-14 w-14 object-contain" />
               <div className="text-left">
-                <p className="text-muted-foreground text-sm uppercase tracking-wider">Логистическая компания</p>
-                <h2 className="text-primary font-bold text-2xl md:text-3xl">ОБЪЕДИНЕННАЯ СЛУЖБА ЛОГИСТИКИ</h2>
+                <p className="text-primary/70 text-xs uppercase tracking-wider font-medium">Логистическая компания</p>
+                <h2 className="text-primary font-bold text-lg md:text-xl">ОБЪЕДИНЕННАЯ СЛУЖБА ЛОГИСТИКИ</h2>
               </div>
             </div>
             
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight drop-shadow-lg">
-              Ваш надежный партнер в сфере{" "}
-              <span className="text-primary">автомобильных перевозок</span>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+              <span className="text-primary drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">Ваш надежный партнер в сфере</span>
+              <br />
+              <span className="text-accent drop-shadow-[0_2px_4px_rgba(255,255,255,0.8)]">автомобильных перевозок</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-foreground/80 mb-6 leading-relaxed max-w-2xl mx-auto bg-white/70 backdrop-blur-sm px-4 py-2 rounded-lg">
               Грузоперевозки любой сложности: ADR, негабарит, рефрижераторы. 
               Индивидуальный подход к каждому клиенту.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
               {features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2 bg-background/80 backdrop-blur px-4 py-2 rounded-full shadow-md">
-                  <CheckCircle className="h-4 w-4 text-accent" />
+                <div key={feature} className="flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-md border border-primary/20">
+                  <CheckCircle className="h-4 w-4 text-primary" />
                   <span className="text-sm font-medium text-foreground">{feature}</span>
                 </div>
               ))}
             </div>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/request" className="btn-hero inline-flex items-center justify-center gap-2">
+              <Link to="/request" className="btn-hero inline-flex items-center justify-center gap-2 shadow-xl">
                 Оставить заявку
                 <ArrowRight className="h-5 w-5" />
               </Link>
-              <Link to="/tariffs" className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-8 py-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-background/80 backdrop-blur">
+              <Link to="/tariffs" className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-8 py-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-lg">
                 Наши тарифы
               </Link>
             </div>
