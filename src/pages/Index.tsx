@@ -3,7 +3,9 @@ import { Truck, Package, Shield, Clock, MapPin, ArrowRight, CheckCircle, Warehou
 import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
 import heroBg from "@/assets/hero-bg.jpg";
-import logo from "@/assets/logo.png";
+import partnerSvetofor from "@/assets/partners/svetofor.png";
+import partnerX5 from "@/assets/partners/x5.png";
+import partnerRzd from "@/assets/partners/rzd.png";
 
 const features = [
   "Работа 24/7",
@@ -66,9 +68,6 @@ const Index = () => {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <p className="text-primary-foreground/80 text-sm uppercase tracking-wider mb-2">Логистическая компания</p>
-            <h2 className="text-accent font-bold text-xl mb-6">ОБЪЕДИНЕННАЯ СЛУЖБА ЛОГИСТИКИ</h2>
-            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
               Ваш надежный партнер в сфере{" "}
               <span className="text-accent">автомобильных перевозок</span>
@@ -88,7 +87,7 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link to="/request" className="btn-hero inline-flex items-center justify-center gap-2">
                 Оставить заявку
                 <ArrowRight className="h-5 w-5" />
@@ -96,6 +95,16 @@ const Index = () => {
               <Link to="/tariffs" className="btn-outline-hero inline-flex items-center justify-center gap-2">
                 Наши тарифы
               </Link>
+            </div>
+
+            {/* Partners Section */}
+            <div className="pt-8 border-t border-primary-foreground/20">
+              <p className="text-primary-foreground/70 text-sm uppercase tracking-wider mb-6">Нам доверяют</p>
+              <div className="flex items-center gap-8 flex-wrap">
+                <img src={partnerRzd} alt="РЖД" className="h-10 md:h-12 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
+                <img src={partnerX5} alt="X5 Group" className="h-10 md:h-12 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
+                <img src={partnerSvetofor} alt="Светофор" className="h-8 md:h-10 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
+              </div>
             </div>
           </div>
         </div>
