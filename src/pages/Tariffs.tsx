@@ -85,9 +85,8 @@ const Tariffs = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${fleetHero})` }}
-        >
-          <div className="absolute inset-0 bg-primary/90"></div>
-        </div>
+        />
+        <div className="absolute inset-0 bg-primary/80"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Наши <span className="text-accent">тарифы</span>
