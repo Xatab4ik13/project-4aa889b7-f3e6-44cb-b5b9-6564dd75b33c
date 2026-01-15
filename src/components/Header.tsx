@@ -20,7 +20,11 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2 sm:gap-3"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             <img src={logo} alt="ОСЛ" className="h-10 w-10 sm:h-14 sm:w-14 object-contain" />
             <div>
               <p className="text-primary-foreground font-medium text-sm sm:text-lg leading-tight">
