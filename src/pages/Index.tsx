@@ -49,6 +49,30 @@ const services = [
 const Index = () => {
   return (
     <Layout>
+      {/* SEO: Structured data for LocalBusiness */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Объединенная Служба Логистики",
+          "image": "https://osl-logistika.ru/favicon.png",
+          "telephone": "+7-915-015-79-92",
+          "email": "OSL.LOGISTIKA@yandex.ru",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Домодедово",
+            "addressRegion": "Московская область",
+            "addressCountry": "RU"
+          },
+          "priceRange": "$$",
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          }
+        })
+      }} />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         {/* Background Image */}

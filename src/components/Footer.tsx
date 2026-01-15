@@ -1,10 +1,11 @@
+import { forwardRef } from "react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
 
-const Footer = () => {
+const Footer = forwardRef<HTMLElement>((_, ref) => {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer ref={ref} className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -23,16 +24,16 @@ const Footer = () => {
           </div>
 
           {/* Navigation */}
-          <div>
+          <nav aria-label="Навигация по сайту">
             <h4 className="text-accent font-bold text-lg mb-4">Навигация</h4>
-            <nav className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <Link to="/" className="text-primary-foreground/80 hover:text-accent transition-colors">Главная</Link>
               <Link to="/tariffs" className="text-primary-foreground/80 hover:text-accent transition-colors">Тарифы</Link>
               <Link to="/request" className="text-primary-foreground/80 hover:text-accent transition-colors">Заявка</Link>
               <Link to="/vacancies" className="text-primary-foreground/80 hover:text-accent transition-colors">Вакансии</Link>
               <Link to="/contacts" className="text-primary-foreground/80 hover:text-accent transition-colors">Контакты</Link>
-            </nav>
-          </div>
+            </div>
+          </nav>
 
           {/* Services */}
           <div>
@@ -47,31 +48,33 @@ const Footer = () => {
           </div>
 
           {/* Contacts */}
-          <div>
+          <address className="not-italic">
             <h4 className="text-accent font-bold text-lg mb-4">Контакты</h4>
             <div className="flex flex-col gap-3">
               <a href="tel:+79150157992" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
-                <Phone className="h-4 w-4 text-accent" />
+                <Phone className="h-4 w-4 text-accent" aria-hidden="true" />
                 +7 (915) 015-79-92
               </a>
               <a href="mailto:OSL.LOGISTIKA@yandex.ru" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
-                <Mail className="h-4 w-4 text-accent" />
+                <Mail className="h-4 w-4 text-accent" aria-hidden="true" />
                 OSL.LOGISTIKA@yandex.ru
               </a>
               <div className="flex items-start gap-2 text-primary-foreground/80">
-                <MapPin className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
+                <MapPin className="h-4 w-4 text-accent mt-1 flex-shrink-0" aria-hidden="true" />
                 <span>Москва, Домодедово</span>
               </div>
             </div>
-          </div>
+          </address>
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60 text-sm">
-          <p>© 2024 Объединенная Служба Логистики. Все права защищены.</p>
+          <p>© {new Date().getFullYear()} Объединенная Служба Логистики. Все права защищены.</p>
         </div>
       </div>
     </footer>
   );
-};
+});
+
+Footer.displayName = "Footer";
 
 export default Footer;
