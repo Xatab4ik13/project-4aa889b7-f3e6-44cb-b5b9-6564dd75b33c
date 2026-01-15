@@ -3,10 +3,8 @@ import { Truck, Package, Shield, Clock, MapPin, ArrowRight, CheckCircle, Warehou
 import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
 import heroBg from "@/assets/hero-bg.jpg";
-import partnerSvetofor from "@/assets/partners/svetofor.png";
-import partnerX5 from "@/assets/partners/x5.png";
-import partnerRzd from "@/assets/partners/rzd.png";
-
+import PartnersCarousel from "@/components/PartnersCarousel";
+import AboutSection from "@/components/AboutSection";
 const features = [
   "Работа 24/7",
   "Более 4 лет опыта",
@@ -100,31 +98,27 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section with Partners */}
-      <section className="py-12 bg-accent">
+      {/* Stats Section */}
+      <section className="py-12 bg-background border-b border-border">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-accent-foreground mb-2">
+                <p className="text-4xl md:text-5xl font-bold text-primary mb-2">
                   {stat.value}
                 </p>
-                <p className="text-accent-foreground/80 font-medium">{stat.label}</p>
+                <p className="text-muted-foreground font-medium">{stat.label}</p>
               </div>
             ))}
           </div>
-          
-          {/* Partners */}
-          <div className="pt-8 border-t border-accent-foreground/20">
-            <p className="text-accent-foreground/70 text-sm uppercase tracking-wider text-center mb-6">Нам доверяют</p>
-            <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
-              <img src={partnerRzd} alt="РЖД" className="h-10 md:h-14 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-              <img src={partnerX5} alt="X5 Group" className="h-10 md:h-14 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-              <img src={partnerSvetofor} alt="Светофор" className="h-8 md:h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            </div>
-          </div>
         </div>
       </section>
+
+      {/* Partners Carousel */}
+      <PartnersCarousel />
+
+      {/* About Section */}
+      <AboutSection />
 
       {/* Philosophy Section */}
       <section className="py-20 bg-muted">
