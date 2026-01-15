@@ -25,7 +25,7 @@ const Header = () => {
             className="flex items-center gap-2 sm:gap-3"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
-            <img src={logo} alt="ОСЛ" className="h-11 w-11 sm:h-16 sm:w-16 object-contain" />
+            <img src={logo} alt="ОСЛ" className="h-14 w-14 sm:h-16 sm:w-16 object-contain" />
             <div>
               <p className="text-primary-foreground font-medium text-base sm:text-xl leading-tight">
                 Объединенная
