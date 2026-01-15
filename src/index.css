@@ -18,13 +18,13 @@
     --primary: 187 85% 29%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 66 64% 53%;
+    --secondary: 100 45% 55%;
     --secondary-foreground: 187 85% 18%;
 
     --muted: 187 20% 95%;
     --muted-foreground: 187 30% 40%;
 
-    --accent: 66 64% 53%;
+    --accent: 100 45% 55%;
     --accent-foreground: 187 85% 18%;
 
     --destructive: 0 84.2% 60.2%;
@@ -39,7 +39,7 @@
     /* Custom tokens */
     --hero-gradient: linear-gradient(135deg, hsl(187 85% 25%) 0%, hsl(187 85% 35%) 100%);
     --section-dark: 187 85% 25%;
-    --lime: 66 64% 53%;
+    --lime: 100 45% 55%;
     --lime-foreground: 187 85% 18%;
     --teal-light: 187 50% 95%;
   }

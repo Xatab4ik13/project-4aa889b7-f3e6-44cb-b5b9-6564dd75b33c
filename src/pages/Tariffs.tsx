@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Check, ArrowRight, Truck, Package, AlertTriangle, Thermometer } from "lucide-react";
 import Layout from "@/components/Layout";
+import fleetHero from "@/assets/fleet-hero.jpg";
 
 const tariffs = [
   {
@@ -79,9 +80,15 @@ const additionalServices = [
 const Tariffs = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-dark py-20">
-        <div className="container mx-auto px-4 text-center">
+      {/* Hero with Image */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${fleetHero})` }}
+        >
+          <div className="absolute inset-0 bg-primary/90"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Наши <span className="text-accent">тарифы</span>
           </h1>

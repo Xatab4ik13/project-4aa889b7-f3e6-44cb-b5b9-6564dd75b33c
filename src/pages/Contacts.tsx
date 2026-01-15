@@ -2,6 +2,7 @@ import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import officeHero from "@/assets/office-hero.jpg";
 
 const offices = [
   {
@@ -42,9 +43,15 @@ const Contacts = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-dark py-20">
-        <div className="container mx-auto px-4 text-center">
+      {/* Hero with Image */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${officeHero})` }}
+        >
+          <div className="absolute inset-0 bg-primary/90"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             <span className="text-accent">Контакты</span>
           </h1>
@@ -166,7 +173,7 @@ const Contacts = () => {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                     placeholder="Иван Иванов"
                   />
                 </div>
@@ -178,7 +185,7 @@ const Contacts = () => {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="+7 (999) 123-45-67"
                     />
                   </div>
@@ -188,7 +195,7 @@ const Contacts = () => {
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="email@example.com"
                     />
                   </div>
@@ -200,7 +207,7 @@ const Contacts = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={4}
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none bg-background"
                     placeholder="Ваш вопрос или предложение..."
                   />
                 </div>
