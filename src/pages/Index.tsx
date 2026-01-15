@@ -87,7 +87,7 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/request" className="btn-hero inline-flex items-center justify-center gap-2">
                 Оставить заявку
                 <ArrowRight className="h-5 w-5" />
@@ -96,48 +96,32 @@ const Index = () => {
                 Наши тарифы
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Partners Section */}
-            <div className="pt-8 border-t border-primary-foreground/20">
-              <p className="text-primary-foreground/70 text-sm uppercase tracking-wider mb-6">Нам доверяют</p>
-              <div className="flex items-center gap-8 flex-wrap">
-                <img src={partnerRzd} alt="РЖД" className="h-10 md:h-12 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                <img src={partnerX5} alt="X5 Group" className="h-10 md:h-12 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
-                <img src={partnerSvetofor} alt="Светофор" className="h-8 md:h-10 object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
+      {/* Stats Section with Partners */}
+      <section className="py-12 bg-accent">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-4xl md:text-5xl font-bold text-accent-foreground mb-2">
+                  {stat.value}
+                </p>
+                <p className="text-accent-foreground/80 font-medium">{stat.label}</p>
               </div>
+            ))}
+          </div>
+          
+          {/* Partners */}
+          <div className="pt-8 border-t border-accent-foreground/20">
+            <p className="text-accent-foreground/70 text-sm uppercase tracking-wider text-center mb-6">Нам доверяют</p>
+            <div className="flex items-center justify-center gap-10 md:gap-16 flex-wrap">
+              <img src={partnerRzd} alt="РЖД" className="h-10 md:h-14 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src={partnerX5} alt="X5 Group" className="h-10 md:h-14 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img src={partnerSvetofor} alt="Светофор" className="h-8 md:h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-12 bg-accent">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-accent-foreground mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-accent-foreground/80 font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-12 bg-accent">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p className="text-4xl md:text-5xl font-bold text-accent-foreground mb-2">
-                  {stat.value}
-                </p>
-                <p className="text-accent-foreground/80 font-medium">{stat.label}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
