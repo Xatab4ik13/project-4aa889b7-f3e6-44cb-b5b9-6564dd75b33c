@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import partnerSvetofor from "@/assets/partners/svetofor.png";
 import partnerX5 from "@/assets/partners/x5.png";
 import partnerRzd from "@/assets/partners/rzd.png";
@@ -26,8 +25,6 @@ const partners = [
 ];
 
 const PartnersCarousel = () => {
-  const [isHovered, setIsHovered] = useState(false);
-  
   // Duplicate partners for seamless infinite scroll
   const duplicatedPartners = [...partners, ...partners];
 
@@ -41,17 +38,13 @@ const PartnersCarousel = () => {
           Крупнейшие компании России выбирают нас своим логистическим партнёром
         </p>
         
-        <div 
-          className="relative overflow-hidden"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
+        <div className="relative overflow-hidden">
           {/* Gradient overlays for smooth edges */}
           <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
           
           <div 
-            className={`flex gap-16 items-center ${isHovered ? 'animate-pause' : ''}`}
+            className="flex gap-16 items-center"
             style={{
               animation: 'scroll 30s linear infinite',
               width: 'max-content',
@@ -60,7 +53,7 @@ const PartnersCarousel = () => {
             {duplicatedPartners.map((partner, index) => (
               <div 
                 key={`${partner.alt}-${index}`}
-                className="flex-shrink-0 h-16 md:h-20 flex items-center justify-center px-4 grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                className="flex-shrink-0 h-16 md:h-20 flex items-center justify-center px-4"
               >
                 <img 
                   src={partner.src} 
@@ -81,10 +74,6 @@ const PartnersCarousel = () => {
           100% {
             transform: translateX(-50%);
           }
-        }
-        
-        .animate-pause {
-          animation-play-state: paused !important;
         }
       `}</style>
     </div>
