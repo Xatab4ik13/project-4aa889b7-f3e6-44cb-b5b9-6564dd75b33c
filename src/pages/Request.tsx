@@ -258,21 +258,21 @@ const Request = () => {
               <div className="bg-card rounded-2xl shadow-lg p-8">
                 <h3 className="text-xl font-bold text-foreground mb-4">Связаться напрямую</h3>
                 <div className="space-y-4">
-                  <a href="tel:+79001234567" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <a href="tel:+79150157992" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Phone className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold">+7 (900) 123-45-67</p>
+                      <p className="font-semibold">+7 (915) 015-79-92</p>
                       <p className="text-sm text-muted-foreground">Звоните 24/7</p>
                     </div>
                   </a>
-                  <a href="mailto:info@osl-logistics.ru" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                  <a href="mailto:OSL.LOGISTIKA@yandex.ru" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold">info@osl-logistics.ru</p>
+                      <p className="font-semibold">OSL.LOGISTIKA@yandex.ru</p>
                       <p className="text-sm text-muted-foreground">Ответим в течение часа</p>
                     </div>
                   </a>

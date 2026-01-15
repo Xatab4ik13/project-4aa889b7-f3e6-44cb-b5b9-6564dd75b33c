@@ -50,13 +50,13 @@ const Footer = () => {
           <div>
             <h4 className="text-accent font-bold text-lg mb-4">Контакты</h4>
             <div className="flex flex-col gap-3">
-              <a href="tel:+79001234567" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
+              <a href="tel:+79150157992" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
                 <Phone className="h-4 w-4 text-accent" />
-                +7 (900) 123-45-67
+                +7 (915) 015-79-92
               </a>
-              <a href="mailto:info@osl-logistics.ru" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
+              <a href="mailto:OSL.LOGISTIKA@yandex.ru" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
                 <Mail className="h-4 w-4 text-accent" />
-                info@osl-logistics.ru
+                OSL.LOGISTIKA@yandex.ru
               </a>
               <div className="flex items-start gap-2 text-primary-foreground/80">
                 <MapPin className="h-4 w-4 text-accent mt-1 flex-shrink-0" />
