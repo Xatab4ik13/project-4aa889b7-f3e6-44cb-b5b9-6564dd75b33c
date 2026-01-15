@@ -98,26 +98,6 @@ const Index = () => {
       {/* Partners Carousel */}
       <PartnersCarousel />
 
-      {/* Philosophy Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Индивидуальность как основа <span className="text-primary">доверия</span>
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Грузоперевозки — это не просто логистика. Это искусство находить 
-              идеальное решение для каждой уникальной истории.
-            </p>
-            <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-10">
-              <p className="text-accent font-bold text-2xl md:text-3xl italic">
-                «Нет двух одинаковых грузов — нет шаблонных решений»
-              </p>
-              <p className="text-primary-foreground/80 mt-4">— Наша философия</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Services Section */}
       <section className="py-20">
