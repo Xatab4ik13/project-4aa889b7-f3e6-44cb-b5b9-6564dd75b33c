@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Send, CheckCircle, Phone, Mail } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
+import warehouseHero from "@/assets/warehouse-hero.jpg";
 
 const cargoTypes = [
   "Стандартный груз",
@@ -60,9 +61,15 @@ const Request = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-dark py-20">
-        <div className="container mx-auto px-4 text-center">
+      {/* Hero with Image */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${warehouseHero})` }}
+        >
+          <div className="absolute inset-0 bg-primary/90"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             Оставить <span className="text-accent">заявку</span>
           </h1>
@@ -91,7 +98,7 @@ const Request = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="Иван Иванов"
                     />
                   </div>
@@ -103,7 +110,7 @@ const Request = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="+7 (999) 123-45-67"
                     />
                   </div>
@@ -114,7 +121,7 @@ const Request = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="email@example.com"
                     />
                   </div>
@@ -125,7 +132,7 @@ const Request = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="ООО «Название»"
                     />
                   </div>
@@ -141,7 +148,7 @@ const Request = () => {
                       value={formData.from}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="Город отправления"
                     />
                   </div>
@@ -153,7 +160,7 @@ const Request = () => {
                       value={formData.to}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="Город назначения"
                     />
                   </div>
@@ -183,7 +190,7 @@ const Request = () => {
                       name="weight"
                       value={formData.weight}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="5000"
                     />
                   </div>
@@ -194,7 +201,7 @@ const Request = () => {
                       name="volume"
                       value={formData.volume}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                      className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all bg-background"
                       placeholder="20"
                     />
                   </div>
@@ -207,7 +214,7 @@ const Request = () => {
                     value={formData.description}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none bg-background"
                     placeholder="Опишите особенности груза, требования к транспорту..."
                   />
                 </div>

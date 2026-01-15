@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MapPin, Clock, Banknote, ChevronDown, ChevronUp, Send } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
+import driverHero from "@/assets/driver-hero.jpg";
 
 const vacancies = [
   {
@@ -103,9 +104,15 @@ const Vacancies = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-dark py-20">
-        <div className="container mx-auto px-4 text-center">
+      {/* Hero with Image */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${driverHero})` }}
+        >
+          <div className="absolute inset-0 bg-primary/90"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
             <span className="text-accent">Вакансии</span>
           </h1>
@@ -198,14 +205,14 @@ const Vacancies = () => {
                               placeholder="Ваше имя"
                               value={formData.name}
                               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                              className="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary outline-none"
+                              className="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary outline-none bg-background"
                             />
                             <input
                               type="tel"
                               placeholder="Телефон"
                               value={formData.phone}
                               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                              className="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary outline-none"
+                              className="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary outline-none bg-background"
                             />
                           </div>
                           <textarea
@@ -213,7 +220,7 @@ const Vacancies = () => {
                             value={formData.message}
                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                             rows={3}
-                            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary outline-none resize-none mb-4"
+                            className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary outline-none resize-none mb-4 bg-background"
                           />
                           <div className="flex gap-3">
                             <button
