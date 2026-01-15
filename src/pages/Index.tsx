@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Truck, Package, Shield, Clock, MapPin, ArrowRight, CheckCircle, Warehouse, AlertTriangle } from "lucide-react";
 import Layout from "@/components/Layout";
 import ServiceCard from "@/components/ServiceCard";
-import heroMap from "@/assets/hero-russia-map-hero-hq.png";
+import heroMap from "@/assets/hero-russia-map.png";
 import logo from "@/assets/logo.png";
 
 const features = [
@@ -55,66 +55,74 @@ const stats = [
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Section - HQ фон, без блюра и "мыла" */}
-      <section className="relative h-[85vh] min-h-[620px] overflow-hidden">
-        {/* Фоновое изображение */}
-        <img
-          src={heroMap}
-          alt="Карта России с грузоперевозками"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="eager"
-        />
-
-        {/* Лёгкая подложка для читаемости (без blur) */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/35 via-background/25 to-background/45" />
-
-        {/* Контент */}
-        <div className="container mx-auto px-4 relative z-10 h-full">
-          <div className="h-full flex items-center justify-center">
-            <div className="text-center max-w-4xl mx-auto animate-fade-in">
-              <div className="inline-flex items-center gap-4 mb-6 bg-background/95 px-6 py-3 rounded-2xl shadow-lg border border-border">
-                <img src={logo} alt="ОСЛ" className="h-14 w-14 object-contain" />
-                <div className="text-left">
-                  <p className="text-muted-foreground text-xs uppercase tracking-wider font-medium">Логистическая компания</p>
-                  <h2 className="text-primary font-bold text-lg md:text-xl">ОБЪЕДИНЕННАЯ СЛУЖБА ЛОГИСТИКИ</h2>
+      {/* Hero Section - как в презентации */}
+      <section className="relative min-h-[90vh] flex items-center bg-background overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Left content */}
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <img src={logo} alt="ОСЛ" className="h-16 w-16 object-contain" />
+                <div>
+                  <p className="text-muted-foreground text-sm uppercase tracking-wider">Логистическая компания</p>
+                  <h2 className="text-primary font-bold text-xl">ОБЪЕДИНЕННАЯ СЛУЖБА ЛОГИСТИКИ</h2>
                 </div>
               </div>
-
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
-                <span className="text-foreground">Ваш надежный партнер в сфере</span>
-                <br />
+              
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 leading-tight">
+                Ваш надежный партнер в сфере{" "}
                 <span className="text-primary">автомобильных перевозок</span>
               </h1>
-
-              <p className="text-base md:text-lg text-foreground/80 mb-6 leading-relaxed max-w-2xl mx-auto">
-                Грузоперевозки любой сложности: ADR, негабарит, рефрижераторы. Индивидуальный подход к каждому клиенту.
+              
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Грузоперевозки любой сложности: ADR, негабарит, рефрижераторы. 
+                Индивидуальный подход к каждому клиенту.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-2 mb-8">
+              <div className="flex flex-wrap gap-3 mb-8">
                 {features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="flex items-center gap-2 bg-background/95 px-4 py-2 rounded-full shadow-md border border-border"
-                  >
-                    <CheckCircle className="h-4 w-4 text-primary" />
+                  <div key={feature} className="flex items-center gap-2 bg-muted px-4 py-2 rounded-full">
+                    <CheckCircle className="h-4 w-4 text-accent" />
                     <span className="text-sm font-medium text-foreground">{feature}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/request" className="btn-hero inline-flex items-center justify-center gap-2 shadow-xl">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link to="/request" className="btn-hero inline-flex items-center justify-center gap-2">
                   Оставить заявку
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-                <Link
-                  to="/tariffs"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-8 py-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 bg-background/95 shadow-lg"
-                >
+                <Link to="/tariffs" className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary font-semibold px-8 py-4 rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                   Наши тарифы
                 </Link>
               </div>
             </div>
+
+            {/* Right - Russia Map with Truck */}
+            <div className="relative">
+              <img 
+                src={heroMap} 
+                alt="Карта России с грузоперевозками" 
+                className="w-full h-auto max-h-[600px] object-contain animate-fade-in"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-accent">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-4xl md:text-5xl font-bold text-accent-foreground mb-2">
+                  {stat.value}
+                </p>
+                <p className="text-accent-foreground/80 font-medium">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
