@@ -3,6 +3,7 @@ import { MapPin, Clock, Banknote, ChevronDown, ChevronUp, Send } from "lucide-re
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
 import driverHero from "@/assets/driver-hero.jpg";
+import OptimizedBackground from "@/components/OptimizedBackground";
 
 const vacancies = [
   {
@@ -105,12 +106,12 @@ const Vacancies = () => {
   return (
     <Layout>
       {/* Hero with Image */}
-      <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${driverHero})` }}
-        />
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <OptimizedBackground
+        src={driverHero}
+        className="py-20 overflow-hidden"
+        priority={true}
+      >
+        <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             <span className="text-accent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Вакансии</span>
           </h1>
@@ -119,7 +120,7 @@ const Vacancies = () => {
             Мы ценим каждого сотрудника и создаем условия для развития.
           </p>
         </div>
-      </section>
+      </OptimizedBackground>
 
       {/* Vacancies List */}
       <section className="py-20">

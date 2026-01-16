@@ -5,6 +5,8 @@ import ServiceCard from "@/components/ServiceCard";
 import heroBg from "@/assets/hero-bg.jpg";
 import PartnersCarousel from "@/components/PartnersCarousel";
 import AboutSection from "@/components/AboutSection";
+import OptimizedBackground from "@/components/OptimizedBackground";
+
 const features = [
   "Работа 24/7",
   "Более 4 лет опыта",
@@ -74,12 +76,12 @@ const Index = () => {
         })
       }} />
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
+      <OptimizedBackground
+        src={heroBg}
+        className="min-h-[90vh] flex items-center overflow-hidden"
+        priority={true}
+        overlay={false}
+      >
         
         
         <div className="container mx-auto px-4 relative z-10">
@@ -114,7 +116,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </OptimizedBackground>
 
       {/* About Section */}
       <AboutSection />
