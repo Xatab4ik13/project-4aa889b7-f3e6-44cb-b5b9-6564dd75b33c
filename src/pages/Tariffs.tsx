@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Truck, Package, AlertTriangle, Thermometer, Container } from "lucide-react";
+import { ArrowRight, Truck, Package, AlertTriangle, Thermometer, Layers } from "lucide-react";
 import Layout from "@/components/Layout";
 import fleetHero from "@/assets/fleet-hero.jpg";
 import OptimizedBackground from "@/components/OptimizedBackground";
@@ -34,7 +34,7 @@ const tariffs = [
     details: "Температура от -25°C до +25°C, грузоподъемность до 20 тонн, контроль температуры, мультитемпературные перевозки, сертифицированный транспорт.",
   },
   {
-    icon: Container,
+    icon: Layers,
     name: "Тралы",
     description: "Негабаритные перевозки",
     price: "от 250 ₽/км",
