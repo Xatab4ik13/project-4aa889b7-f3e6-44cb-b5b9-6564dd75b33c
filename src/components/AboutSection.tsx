@@ -4,11 +4,12 @@ import warehouseHero from "@/assets/warehouse-hero.jpg";
 import OptimizedImage from "@/components/OptimizedImage";
 
 const advantages = [
-  { icon: Route, text: "Перевозки любой сложности по России и СНГ" },
-  { icon: Truck, text: "Собственный и привлечённый специализированный транспорт" },
-  { icon: Award, text: "Экспертиза в сложных и нестандартных перевозках" },
-  { icon: ShieldCheck, text: "Прозрачные условия и соблюдение сроков" },
-  { icon: Target, text: "Постоянная связь и контроль на всём пути следования" },
+  { icon: ShieldCheck, text: "Все классы опасности, сертифицированный транспорт" },
+  { icon: Users, text: "Водители, прошедшие специальное обучение" },
+  { icon: Award, text: "Страхование перевозки" },
+  { icon: Route, text: "Документальное сопровождение" },
+  { icon: Target, text: "Спутниковое (ГЛОНАСС) отслеживание ТС 24/7" },
+  { icon: Truck, text: "Собственный автопарк" },
 ];
 
 const AboutSection = () => {
@@ -47,7 +48,7 @@ const AboutSection = () => {
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-xl hidden md:block">
-              <p className="text-4xl font-bold">4+</p>
+              <p className="text-4xl font-bold">10+</p>
               <p className="text-primary-foreground/80">лет опыта</p>
             </div>
           </div>

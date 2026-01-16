@@ -7,16 +7,16 @@ import OptimizedBackground from "@/components/OptimizedBackground";
 
 const offices = [
   {
-    city: "Москва (Домодедово)",
-    address: "Московская область, г. Домодедово, ул. Логистическая, д. 1",
+    city: "Москва",
+    address: "м. ЦСКА, Ленинградский проспект, д. 39",
     phone: "+7 (915) 015-79-92",
     email: "OSL.LOGISTIKA@yandex.ru",
     hours: "Пн-Пт: 9:00-18:00, Сб-Вс: выходной",
     isMain: true,
   },
   {
-    city: "Казань",
-    address: "Республика Татарстан, г. Казань, ул. Складская, д. 15",
+    city: "Санкт-Петербург",
+    address: "м. Невский проспект, Невский проспект, д. 30",
     phone: "+7 (915) 015-79-92",
     email: "OSL.LOGISTIKA@yandex.ru",
     hours: "Пн-Пт: 9:00-18:00, Сб-Вс: выходной",
