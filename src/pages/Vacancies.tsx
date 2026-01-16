@@ -110,6 +110,7 @@ const Vacancies = () => {
         src={driverHero}
         className="py-20 overflow-hidden"
         priority={true}
+        overlay={false}
       >
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
