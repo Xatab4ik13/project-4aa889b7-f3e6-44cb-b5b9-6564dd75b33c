@@ -85,13 +85,13 @@ const Index = () => {
         
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <div className="max-w-3xl bg-black/50 backdrop-blur-sm rounded-2xl p-8">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
               Ваш надежный партнер в сфере{" "}
-              <span className="text-accent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">автомобильных перевозок</span>
+              <span className="text-accent">автомобильных перевозок</span>
             </h1>
             
-            <p className="text-xl text-primary-foreground mb-8 leading-relaxed drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
+            <p className="text-xl text-primary-foreground mb-8 leading-relaxed">
               Грузоперевозки любой сложности: ADR, негабарит, рефрижераторы. 
               Индивидуальный подход к каждому клиенту.
             </p>
