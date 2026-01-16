@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
 import warehouseHero from "@/assets/warehouse-hero.jpg";
 import OptimizedBackground from "@/components/OptimizedBackground";
+import { supabase } from "@/integrations/supabase/client";
 
 const cargoTypes = [
   "Стандартный груз",
@@ -37,27 +38,50 @@ const Request = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Заявка отправлена!",
-      description: "Наш менеджер свяжется с вами в течение 15 минут.",
-    });
-    
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      company: "",
-      from: "",
-      to: "",
-      cargoType: "",
-      weight: "",
-      volume: "",
-      description: "",
-    });
-    setIsSubmitting(false);
+    try {
+      const { error } = await supabase.functions.invoke("send-notification", {
+        body: {
+          formType: "request",
+          data: formData,
+        },
+      });
+
+      if (error) {
+        console.error("Error sending notification:", error);
+        toast({
+          title: "Ошибка отправки",
+          description: "Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Наш менеджер свяжется с вами в течение 15 минут.",
+        });
+        
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          company: "",
+          from: "",
+          to: "",
+          cargoType: "",
+          weight: "",
+          volume: "",
+          description: "",
+        });
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      toast({
+        title: "Ошибка отправки",
+        description: "Пожалуйста, попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

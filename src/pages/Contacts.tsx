@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import officeHero from "@/assets/office-hero.jpg";
 import OptimizedBackground from "@/components/OptimizedBackground";
+import { supabase } from "@/integrations/supabase/client";
 
 const offices = [
   {
@@ -26,6 +27,7 @@ const offices = [
 
 const Contacts = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -35,11 +37,40 @@ const Contacts = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Сообщение отправлено!",
-      description: "Мы ответим вам в ближайшее время.",
-    });
-    setFormData({ name: "", phone: "", email: "", message: "" });
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke("send-notification", {
+        body: {
+          formType: "contact",
+          data: formData,
+        },
+      });
+
+      if (error) {
+        console.error("Error sending notification:", error);
+        toast({
+          title: "Ошибка отправки",
+          description: "Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Сообщение отправлено!",
+          description: "Мы ответим вам в ближайшее время.",
+        });
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      toast({
+        title: "Ошибка отправки",
+        description: "Пожалуйста, попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -213,10 +244,15 @@ const Contacts = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground font-semibold py-4 rounded-lg hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-primary-foreground font-semibold py-4 rounded-lg hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70"
                 >
-                  Отправить сообщение
-                  <Send className="h-5 w-5" />
+                  {isSubmitting ? "Отправка..." : (
+                    <>
+                      Отправить сообщение
+                      <Send className="h-5 w-5" />
+                    </>
+                  )}
                 </button>
               </form>
             </div>

@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
 import driverHero from "@/assets/driver-hero.jpg";
 import OptimizedBackground from "@/components/OptimizedBackground";
+import { supabase } from "@/integrations/supabase/client";
 
 const vacancies = [
   {
@@ -92,15 +93,49 @@ const Vacancies = () => {
   const { toast } = useToast();
   const [expandedId, setExpandedId] = useState<number | null>(null);
   const [applyingId, setApplyingId] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "", message: "" });
 
   const handleApply = async (vacancyId: number) => {
-    toast({
-      title: "Отклик отправлен!",
-      description: "Мы свяжемся с вами в ближайшее время.",
-    });
-    setApplyingId(null);
-    setFormData({ name: "", phone: "", message: "" });
+    setIsSubmitting(true);
+    const vacancy = vacancies.find(v => v.id === vacancyId);
+    
+    try {
+      const { error } = await supabase.functions.invoke("send-notification", {
+        body: {
+          formType: "vacancy",
+          data: {
+            ...formData,
+            vacancy: vacancy?.title || "Не указана",
+          },
+        },
+      });
+
+      if (error) {
+        console.error("Error sending notification:", error);
+        toast({
+          title: "Ошибка отправки",
+          description: "Пожалуйста, попробуйте позже или свяжитесь с нами по телефону.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Отклик отправлен!",
+          description: "Мы свяжемся с вами в ближайшее время.",
+        });
+        setApplyingId(null);
+        setFormData({ name: "", phone: "", message: "" });
+      }
+    } catch (err) {
+      console.error("Error:", err);
+      toast({
+        title: "Ошибка отправки",
+        description: "Пожалуйста, попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -225,9 +260,14 @@ const Vacancies = () => {
                           <div className="flex gap-3">
                             <button
                               onClick={() => handleApply(vacancy.id)}
-                              className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2"
+                              disabled={isSubmitting}
+                              className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-semibold hover:bg-primary/90 transition-colors flex items-center gap-2 disabled:opacity-70"
                             >
-                              Отправить <Send className="h-4 w-4" />
+                              {isSubmitting ? "Отправка..." : (
+                                <>
+                                  Отправить <Send className="h-4 w-4" />
+                                </>
+                              )}
                             </button>
                             <button
                               onClick={() => setApplyingId(null)}
