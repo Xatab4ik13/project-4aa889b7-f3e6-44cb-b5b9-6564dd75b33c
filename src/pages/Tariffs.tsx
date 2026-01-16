@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Truck, Package, AlertTriangle, Thermometer } from "lucide-react";
+import { ArrowRight, Truck, Package, AlertTriangle, Thermometer, Container } from "lucide-react";
 import Layout from "@/components/Layout";
 import fleetHero from "@/assets/fleet-hero.jpg";
 import OptimizedBackground from "@/components/OptimizedBackground";
@@ -9,39 +9,46 @@ const tariffs = [
     icon: Truck,
     name: "Стандарт",
     description: "Для обычных грузов",
-    price: "от 35 ₽/км",
+    price: "от 50 ₽/км",
     details: "Грузоподъемность до 20 тонн, объем до 82 м³, стандартные сроки доставки, базовое страхование, отслеживание груза.",
   },
   {
     icon: Package,
     name: "Экспресс",
     description: "Срочная доставка",
-    price: "от 50 ₽/км",
+    price: "от 65 ₽/км",
     details: "Грузоподъемность до 20 тонн, объем до 82 м³, ускоренная доставка, расширенное страхование, приоритетная обработка, трекинг в реальном времени.",
   },
   {
     icon: AlertTriangle,
     name: "ADR",
     description: "Опасные грузы",
-    price: "от 70 ₽/км",
+    price: "от 85 ₽/км",
     details: "Все классы опасности, сертифицированный транспорт, обученные водители, полное страхование, документальное сопровождение, мониторинг 24/7.",
   },
   {
     icon: Thermometer,
     name: "Рефрижератор",
     description: "Температурный режим",
-    price: "от 55 ₽/км",
+    price: "от 65 ₽/км",
     details: "Температура от -25°C до +25°C, грузоподъемность до 20 тонн, контроль температуры, мультитемпературные перевозки, сертифицированный транспорт.",
+  },
+  {
+    icon: Container,
+    name: "Тралы",
+    description: "Негабаритные перевозки",
+    price: "от 250 ₽/км",
+    details: "Перевозка крупногабаритной и тяжеловесной техники, низкорамные платформы, получение разрешений, сопровождение.",
   },
 ];
 
 const additionalServices = [
-  { name: "Погрузочно-разгрузочные работы", price: "от 2 000 ₽" },
-  { name: "Страхование груза (дополнительное)", price: "0.1% от стоимости" },
-  { name: "Упаковка груза", price: "от 500 ₽" },
+  { name: "Погрузка-разгрузка", price: "от 3 000 ₽" },
+  { name: "Страхование груза", price: "0,2%" },
+  { name: "Упаковка", price: "от 1 000 ₽" },
   { name: "Сопровождение груза", price: "договорная" },
-  { name: "Складское хранение", price: "от 50 ₽/паллет/сутки" },
-  { name: "Кросс-докинг", price: "от 300 ₽/паллет" },
+  { name: "Складское хранение", price: "от 250 ₽/паллет/сутки" },
+  { name: "Кросс-докинг", price: "500 ₽/паллет" },
 ];
 
 const Tariffs = () => {

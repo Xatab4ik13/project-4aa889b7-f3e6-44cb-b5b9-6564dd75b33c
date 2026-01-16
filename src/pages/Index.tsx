@@ -8,10 +8,12 @@ import AboutSection from "@/components/AboutSection";
 import OptimizedBackground from "@/components/OptimizedBackground";
 
 const features = [
-  "Работа 24/7",
-  "Более 4 лет опыта",
-  "Надежные перевозчики",
-  "Индивидуальный подход",
+  "Собственный парк",
+  "24/7",
+  "Опыт более 10 лет",
+  "Профессиональная команда логистов",
+  "Высокий сервис",
+  "Профессиональные водители",
 ];
 
 const services = [
@@ -88,12 +90,12 @@ const Index = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Ваш надежный партнер в сфере{" "}
-              <span className="text-accent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">автомобильных перевозок</span>
+              <span className="text-accent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">грузоперевозок по всему миру</span>
             </h1>
             
             <p className="text-xl text-primary-foreground mb-8 leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-              Грузоперевозки любой сложности: ADR, негабарит, рефрижераторы. 
-              Индивидуальный подход к каждому клиенту.
+              Опыт работы на рынке более 10 лет. Профессиональная команда логистов с академическим образованием. 
+              Высокий сервис и индивидуальный подход.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-8">
