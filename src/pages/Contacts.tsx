@@ -52,15 +52,13 @@ const Contacts = () => {
         overlay={false}
       >
         <div className="container mx-auto px-4 text-center">
-          <div className="inline-block bg-black/50 backdrop-blur-sm rounded-2xl px-8 py-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-              <span className="text-accent">Контакты</span>
-            </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-              Свяжитесь с нами любым удобным способом. 
-              Мы работаем 24/7 и всегда готовы помочь.
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            <span className="text-accent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">Контакты</span>
+          </h1>
+          <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+            Свяжитесь с нами любым удобным способом. 
+            Мы работаем 24/7 и всегда готовы помочь.
+          </p>
         </div>
       </OptimizedBackground>
 

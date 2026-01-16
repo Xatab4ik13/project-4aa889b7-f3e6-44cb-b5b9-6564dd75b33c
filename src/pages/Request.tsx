@@ -70,15 +70,13 @@ const Request = () => {
         overlay={false}
       >
         <div className="container mx-auto px-4 text-center">
-          <div className="inline-block bg-black/50 backdrop-blur-sm rounded-2xl px-8 py-6">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-              Оставить <span className="text-accent">заявку</span>
-            </h1>
-            <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
-              Заполните форму, и мы рассчитаем стоимость доставки 
-              вашего груза в течение 15 минут.
-            </p>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+            Оставить <span className="text-accent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">заявку</span>
+          </h1>
+          <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
+            Заполните форму, и мы рассчитаем стоимость доставки 
+            вашего груза в течение 15 минут.
+          </p>
         </div>
       </OptimizedBackground>
 
