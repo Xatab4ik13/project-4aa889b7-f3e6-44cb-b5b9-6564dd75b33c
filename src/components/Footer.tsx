@@ -55,6 +55,10 @@ const Footer = forwardRef<HTMLElement>((_, ref) => {
                 <Phone className="h-4 w-4 text-accent" aria-hidden="true" />
                 +7 (915) 015-79-92
               </a>
+              <a href="tel:+79106061779" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
+                <Phone className="h-4 w-4 text-accent" aria-hidden="true" />
+                +7 (910) 606-17-79
+              </a>
               <a href="mailto:OSL.LOGISTIKA@yandex.ru" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
                 <Mail className="h-4 w-4 text-accent" aria-hidden="true" />
                 OSL.LOGISTIKA@yandex.ru
