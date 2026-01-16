@@ -55,13 +55,15 @@ const Tariffs = () => {
         overlay={false}
       >
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            Наши <span className="text-accent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">тарифы</span>
-          </h1>
-          <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
-            Прозрачное ценообразование для каждого типа перевозки. 
-            Индивидуальный расчёт для вашего груза.
-          </p>
+          <div className="inline-block bg-black/50 backdrop-blur-sm rounded-2xl px-8 py-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+              Наши <span className="text-accent">тарифы</span>
+            </h1>
+            <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
+              Прозрачное ценообразование для каждого типа перевозки. 
+              Индивидуальный расчёт для вашего груза.
+            </p>
+          </div>
         </div>
       </OptimizedBackground>
 
