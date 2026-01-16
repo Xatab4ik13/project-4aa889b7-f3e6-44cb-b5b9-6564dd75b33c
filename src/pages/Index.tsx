@@ -60,7 +60,7 @@ const Index = () => {
           "@type": "LocalBusiness",
           "name": "Объединенная Служба Логистики",
           "image": "https://osl-logistika.ru/favicon.png",
-          "telephone": "+7-915-015-79-92",
+          "telephone": ["+7-915-015-79-92", "+7-910-606-17-79"],
           "email": "OSL.LOGISTIKA@yandex.ru",
           "address": {
             "@type": "PostalAddress",

@@ -291,6 +291,15 @@ const Request = () => {
                       <p className="text-sm text-muted-foreground">Звоните 24/7</p>
                     </div>
                   </a>
+                  <a href="tel:+79106061779" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <Phone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-semibold">+7 (910) 606-17-79</p>
+                      <p className="text-sm text-muted-foreground">Звоните 24/7</p>
+                    </div>
+                  </a>
                   <a href="mailto:OSL.LOGISTIKA@yandex.ru" className="flex items-center gap-3 text-foreground hover:text-primary transition-colors">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Mail className="h-5 w-5 text-primary" />
