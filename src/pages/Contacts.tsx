@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import officeHero from "@/assets/office-hero.jpg";
+import OptimizedBackground from "@/components/OptimizedBackground";
 
 const offices = [
   {
@@ -44,12 +45,12 @@ const Contacts = () => {
   return (
     <Layout>
       {/* Hero with Image */}
-      <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${officeHero})` }}
-        />
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <OptimizedBackground
+        src={officeHero}
+        className="py-20 overflow-hidden"
+        priority={true}
+      >
+        <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             <span className="text-accent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">Контакты</span>
           </h1>
@@ -58,7 +59,7 @@ const Contacts = () => {
             Мы работаем 24/7 и всегда готовы помочь.
           </p>
         </div>
-      </section>
+      </OptimizedBackground>
 
       {/* Offices */}
       <section className="py-20">

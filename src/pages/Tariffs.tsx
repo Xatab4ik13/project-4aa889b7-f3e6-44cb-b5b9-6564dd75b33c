@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Truck, Package, AlertTriangle, Thermometer } from "lucide-react";
 import Layout from "@/components/Layout";
 import fleetHero from "@/assets/fleet-hero.jpg";
+import OptimizedBackground from "@/components/OptimizedBackground";
 
 const tariffs = [
   {
@@ -47,12 +48,12 @@ const Tariffs = () => {
   return (
     <Layout>
       {/* Hero with Image */}
-      <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${fleetHero})` }}
-        />
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <OptimizedBackground
+        src={fleetHero}
+        className="py-20 overflow-hidden"
+        priority={true}
+      >
+        <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             Наши <span className="text-accent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">тарифы</span>
           </h1>
@@ -61,7 +62,7 @@ const Tariffs = () => {
             Индивидуальный расчёт для вашего груза.
           </p>
         </div>
-      </section>
+      </OptimizedBackground>
 
       {/* Tariffs List */}
       <section className="py-20">

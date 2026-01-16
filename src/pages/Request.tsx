@@ -3,6 +3,7 @@ import { Send, CheckCircle, Phone, Mail } from "lucide-react";
 import Layout from "@/components/Layout";
 import { useToast } from "@/hooks/use-toast";
 import warehouseHero from "@/assets/warehouse-hero.jpg";
+import OptimizedBackground from "@/components/OptimizedBackground";
 
 const cargoTypes = [
   "Стандартный груз",
@@ -62,12 +63,12 @@ const Request = () => {
   return (
     <Layout>
       {/* Hero with Image */}
-      <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${warehouseHero})` }}
-        />
-        <div className="container mx-auto px-4 text-center relative z-10">
+      <OptimizedBackground
+        src={warehouseHero}
+        className="py-20 overflow-hidden"
+        priority={true}
+      >
+        <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             Оставить <span className="text-accent drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">заявку</span>
           </h1>
@@ -76,7 +77,7 @@ const Request = () => {
             вашего груза в течение 15 минут.
           </p>
         </div>
-      </section>
+      </OptimizedBackground>
 
       {/* Form Section */}
       <section className="py-20">

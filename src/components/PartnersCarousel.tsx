@@ -57,7 +57,9 @@ const PartnersCarousel = () => {
               >
                 <img 
                   src={partner.src} 
-                  alt={partner.alt} 
+                  alt={partner.alt}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-auto object-contain max-w-[160px]"
                 />
               </div>

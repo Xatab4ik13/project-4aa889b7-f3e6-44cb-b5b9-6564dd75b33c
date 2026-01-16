@@ -1,6 +1,7 @@
 import { CheckCircle, Target, Users, Award, Truck, Route, ShieldCheck } from "lucide-react";
 import fleetHero from "@/assets/fleet-hero.jpg";
 import warehouseHero from "@/assets/warehouse-hero.jpg";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const advantages = [
   { icon: Route, text: "Перевозки любой сложности по России и СНГ" },
@@ -38,10 +39,11 @@ const AboutSection = () => {
           </div>
           <div className="relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img 
+              <OptimizedImage 
                 src={fleetHero} 
                 alt="Автопарк компании" 
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[400px]"
+                containerClassName="h-[400px]"
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-xl hidden md:block">
@@ -81,10 +83,11 @@ const AboutSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 relative">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img 
+              <OptimizedImage 
                 src={warehouseHero} 
                 alt="Склад и логистика" 
-                className="w-full h-[400px] object-cover"
+                className="w-full h-[400px]"
+                containerClassName="h-[400px]"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground p-6 rounded-xl shadow-xl hidden md:block">
