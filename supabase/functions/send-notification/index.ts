@@ -182,7 +182,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email
     const emailResponse = await resend.emails.send({
-      from: "OSL Logistics <onboarding@resend.dev>",
+      from: "OSL Logistics <noreply@osllogistika.ru>",
       to: [NOTIFICATION_EMAIL],
       subject: subject,
       html: formatEmailHtml(formType, data),
