@@ -85,13 +85,13 @@ const Index = () => {
         
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl bg-black/50 backdrop-blur-sm rounded-2xl p-8">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               Ваш надежный партнер в сфере{" "}
-              <span className="text-accent">автомобильных перевозок</span>
+              <span className="text-accent drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">автомобильных перевозок</span>
             </h1>
             
-            <p className="text-xl text-primary-foreground mb-8 leading-relaxed">
+            <p className="text-xl text-primary-foreground mb-8 leading-relaxed drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
               Грузоперевозки любой сложности: ADR, негабарит, рефрижераторы. 
               Индивидуальный подход к каждому клиенту.
             </p>
@@ -100,7 +100,7 @@ const Index = () => {
               {features.map((feature) => (
                 <div key={feature} className="flex items-center gap-2 bg-primary-foreground/20 backdrop-blur-sm px-4 py-2 rounded-full">
                   <CheckCircle className="h-4 w-4 text-accent" />
-                  <span className="text-sm font-medium text-primary-foreground">{feature}</span>
+                  <span className="text-sm font-medium text-primary-foreground drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">{feature}</span>
                 </div>
               ))}
             </div>
