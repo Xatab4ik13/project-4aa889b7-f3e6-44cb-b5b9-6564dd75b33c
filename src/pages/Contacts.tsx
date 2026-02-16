@@ -10,7 +10,7 @@ const offices = [
   {
     city: "Москва",
     address: "м. ЦСКА, Ленинградский проспект, д. 39",
-    phones: ["+7 (915) 015-79-92", "+7 (910) 606-17-79"],
+    phones: ["+7 (915) 015-79-92"],
     email: "OSL.LOGISTIKA@yandex.ru",
     hours: "Пн-Пт: 9:00-18:00, Сб-Вс: выходной",
     isMain: true,
@@ -18,7 +18,7 @@ const offices = [
   {
     city: "Санкт-Петербург",
     address: "м. Невский проспект, Невский проспект, д. 30",
-    phones: ["+7 (915) 015-79-92", "+7 (910) 606-17-79"],
+    phones: ["+7 (915) 015-79-92"],
     email: "OSL.LOGISTIKA@yandex.ru",
     hours: "Пн-Пт: 9:00-18:00, Сб-Вс: выходной",
     isMain: false,
@@ -167,14 +167,9 @@ const Contacts = () => {
 
               <div className="bg-primary rounded-2xl p-8 text-primary-foreground mb-8">
                 <h3 className="text-accent font-bold text-xl mb-4">Горячая линия 24/7</h3>
-                <div className="flex flex-col gap-2">
-                  <a href="tel:+79150157992" className="text-3xl font-bold hover:text-accent transition-colors">
-                    +7 (915) 015-79-92
-                  </a>
-                  <a href="tel:+79106061779" className="text-3xl font-bold hover:text-accent transition-colors">
-                    +7 (910) 606-17-79
-                  </a>
-                </div>
+                <a href="tel:+79150157992" className="text-3xl font-bold hover:text-accent transition-colors">
+                  +7 (915) 015-79-92
+                </a>
                 <p className="text-primary-foreground/80 mt-2">
                   Диспетчерская служба
                 </p>
